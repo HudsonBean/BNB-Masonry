@@ -1,0 +1,20 @@
+// Variables
+// Theme
+$mainColor : rgb(160,39,47);
+$secondaryColor : rgb(199,200,202);
+$tertiaryColor : rgb(109,110,113);
+$quaternaryColor :rgb(230,230,231);
+
+
+// Mixins
+
+@mixin flexCenter($dir) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+}
+
+@mixin transitionAll() {
+    transition: all 0.15s ease;
+}
