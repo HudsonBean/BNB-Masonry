@@ -25,13 +25,14 @@ body {
     height: 10rem;
     @include flexCenter('row');
     justify-content: space-between;
-    background-color: $secondaryColor;
+    position: relative;
 
     .nav-bar-left, .nav-bar-right { // Default styling for the two
         width: 25rem;
         height: 10rem;
         @include flexCenter('row');
-        a {
+        a:not(.nav-bar-left a:nth-child(1)):not(.nav-bar-right a:nth-child(2)) {
+            white-space: nowrap;
             font-size: 1.5rem;
             font-weight: 850;
             text-decoration: none;
@@ -39,6 +40,14 @@ body {
             color: black;
             -webkit-text-stroke: 0.1px black;
             @include transitionAll();
+            padding: 1rem;
+            border: 1.5px solid $tertiaryColor;
+            border-radius: 40px;
+            &:hover {
+                color: $mainColor;
+                background-color: rgba(0,0,0,0.15);
+                font-size: 1.65rem;
+            }
         }
     }
 
@@ -46,57 +55,32 @@ body {
         margin-left: 1.5rem;
         a {
             margin-right: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-
-            &:nth-child(2) {
-                &::before {
-                    content: "";
-                    width: 0%;
-                    height: 1.5px;
-                    position: absolute;
-                    bottom:0;
-                    right:0;
-                    background-color: $mainColor;
-                    @include transitionAll();
-                }
-    
-                &:hover{
-                    color: $mainColor;
-                    font-size: 1.65rem;
-                    &::before {
-                        left:0;
-                        width: 100%;
-                    }
-                }
-            }
-
         }
     }
 
     .nav-bar-right {
         margin-right: 1.5rem;
         a {
-            margin-left: 1.5rem;
-            padding: 1rem;
-            
-            &:nth-child(1) {
-                border: 1.5px solid $tertiaryColor;
-                border-radius: 40px;
-                &:hover {
-                    background-color: rgba(0,0,0,0.15);
-                }
-            }
+            margin-left: 1rem;
             &:nth-child(2) {
-                color: $quaternaryColor;
-                background-color: black;
+                white-space: nowrap;
+                font-size: 1.5rem;
+                font-weight: 850;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: white;
+                -webkit-text-stroke: 0.1px white;
+                @include transitionAll();
+                padding: 1rem;
                 border: 1.5px solid $tertiaryColor;
                 border-radius: 40px;
+                background-color: black;
                 &:hover {
-                    background-color: rgba(0,0,0,0.65);
+                    color: white;
+                    background-color: rgba(0,0,0,0.75);
+                    font-size: 1.65rem;
                 }
             }
-
         }
     }
     
