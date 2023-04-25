@@ -20,8 +20,20 @@ body {
     background-image: url('../Assets/background.svg');
     background-size: 15%;
     background-repeat: repeat;
-    opacitty: 1;
 }
+
+.blur-top-buttons {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(20%);
+    background-color: rgba(230,230,231,0.75);
+    border-radius: 40px;
+}
+
 // ADD MEDIA QUERY TO CHANGE TO SIDE BAR AT CERTAIN SIZE
 .nav-bar {
     width: 100%;
@@ -46,9 +58,11 @@ body {
             padding: 1rem;
             border: 1.5px solid $tertiaryColor;
             border-radius: 40px;
-            &:hover {
+            position: relative;
+            overflow: hidden;
+;            &:hover {
                 color: $mainColor;
-                background-color: rgba(0,0,0,0.15);
+                background-color: rgba(0,0,0,0.05);
                 font-size: 1.65rem;
             }
         }
