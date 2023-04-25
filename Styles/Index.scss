@@ -17,7 +17,10 @@
     padding: 0;
 }
 body {
-    background-color: $quaternaryColor;
+    background-image: url('../Assets/background.svg');
+    background-size: 15%;
+    background-repeat: repeat;
+    opacitty: 1;
 }
 // ADD MEDIA QUERY TO CHANGE TO SIDE BAR AT CERTAIN SIZE
 .nav-bar {
@@ -90,6 +93,5 @@ body {
 .main-content-wrapper {
     width: 100%;
     height: 100vh;
-    background-color: $quaternaryColor;
     @include flexCenter('column');
 }
