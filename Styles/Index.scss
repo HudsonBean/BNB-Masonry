@@ -25,7 +25,7 @@ body {
     height: 10rem;
     @include flexCenter('row');
     justify-content: space-between;
-    position: relative;
+    position: absolute;
 
     .nav-bar-left, .nav-bar-right { // Default styling for the two
         width: 25rem;
@@ -85,4 +85,11 @@ body {
     }
     
 
+}
+
+.main-content-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: $quaternaryColor;
+    @include flexCenter('column');
 }
